@@ -55,8 +55,8 @@ if ($scope.birthyear < 1900 || $scope.birthyear > year){
 }
 
 if (isValid){
-$scope.urlsearch = "http://www.omdbapi.com/?i=tt3896198&apikey=c2609f89="+$scope.search;
-  $http.get($scope.urlsearch).then(function (response) {
+$scope.urlsearch = "http://www.omdbapi.com/?s="+$scope.search+"&apikey=c2609f89";
+	$http.get($scope.urlsearch).then(function (response) {
       $scope.myData = response.data;
       $scope.calculate = $scope.myData.Year - $scope.birthyear;
       $scope.searchHeader = "IMDB Search Result: " + $scope.myData.Title;  
